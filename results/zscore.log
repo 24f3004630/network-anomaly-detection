@@ -1,0 +1,48 @@
+method=zscore_seq n=1000000 flagged=10196
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=10191 fp=5 fn=0)
+time_load=0.399 time_compute=0.038
+RESULT,zscore_seq,1000000,0.399030,0.037829
+method=zscore_seq n=1000000 flagged=10196
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=10191 fp=5 fn=0)
+time_load=0.043 time_compute=0.042
+RESULT,zscore_seq,1000000,0.042654,0.041990
+method=zscore_seq n=1000000 flagged=10196
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=10191 fp=5 fn=0)
+time_load=0.078 time_compute=0.075
+RESULT,zscore_seq,1000000,0.077900,0.075448
+method=zscore_seq n=2000000 flagged=20248
+precision=0.9994 recall=1.0000 f1=0.9997 (tp=20236 fp=12 fn=0)
+time_load=0.352 time_compute=0.118
+RESULT,zscore_seq,2000000,0.351510,0.117718
+method=zscore_seq n=2000000 flagged=20248
+precision=0.9994 recall=1.0000 f1=0.9997 (tp=20236 fp=12 fn=0)
+time_load=0.101 time_compute=0.095
+RESULT,zscore_seq,2000000,0.100920,0.095459
+method=zscore_seq n=2000000 flagged=20248
+precision=0.9994 recall=1.0000 f1=0.9997 (tp=20236 fp=12 fn=0)
+time_load=0.081 time_compute=0.079
+RESULT,zscore_seq,2000000,0.080704,0.078606
+method=zscore_seq n=4000000 flagged=40169
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=40149 fp=20 fn=0)
+time_load=0.874 time_compute=0.208
+RESULT,zscore_seq,4000000,0.873914,0.207725
+method=zscore_seq n=4000000 flagged=40169
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=40149 fp=20 fn=0)
+time_load=0.179 time_compute=0.151
+RESULT,zscore_seq,4000000,0.179396,0.151188
+method=zscore_seq n=4000000 flagged=40169
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=40149 fp=20 fn=0)
+time_load=0.128 time_compute=0.151
+RESULT,zscore_seq,4000000,0.127662,0.150852
+method=zscore_seq n=8000000 flagged=80043
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=80004 fp=39 fn=0)
+time_load=0.997 time_compute=0.406
+RESULT,zscore_seq,8000000,0.996564,0.406224
+method=zscore_seq n=8000000 flagged=80043
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=80004 fp=39 fn=0)
+time_load=0.505 time_compute=0.347
+RESULT,zscore_seq,8000000,0.504792,0.347273
+method=zscore_seq n=8000000 flagged=80043
+precision=0.9995 recall=1.0000 f1=0.9998 (tp=80004 fp=39 fn=0)
+time_load=0.402 time_compute=0.372
+RESULT,zscore_seq,8000000,0.401889,0.371832
