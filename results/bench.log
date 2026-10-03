@@ -1,0 +1,34 @@
+== strong scaling (n=4000000)
+seq  strong n=4000000
+mpi  strong n=4000000 p=1 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=2 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=3 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=4 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=6 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=8 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  strong n=4000000 p=12 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+== data volume
+seq  volume n=1000000
+mpi  volume n=1000000 p=1 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=1000000 p=4 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=1000000 p=8 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+seq  volume n=2000000
+mpi  volume n=2000000 p=1 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=2000000 p=4 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=2000000 p=8 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+seq  volume n=4000000
+mpi  volume n=4000000 p=1 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=4000000 p=4 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=4000000 p=8 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+seq  volume n=8000000
+mpi  volume n=8000000 p=1 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=8000000 p=4 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  volume n=8000000 p=8 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+== hybrid, 12 hardware threads total (n=4000000)
+mpi  hybrid n=4000000 p=12 threads=1 [--use-hwthread-cpus --bind-to hwthread --map-by hwthread]
+mpi  hybrid n=4000000 p=6 threads=2 [--use-hwthread-cpus --bind-to none]
+mpi  hybrid n=4000000 p=4 threads=3 [--use-hwthread-cpus --bind-to none]
+mpi  hybrid n=4000000 p=3 threads=4 [--use-hwthread-cpus --bind-to none]
+mpi  hybrid n=4000000 p=2 threads=6 [--use-hwthread-cpus --bind-to none]
+mpi  hybrid n=4000000 p=1 threads=12 [--use-hwthread-cpus --bind-to none]
+done: results/results.csv (150 rows)

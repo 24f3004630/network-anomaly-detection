@@ -1,0 +1,50 @@
+STATISTIC USED: min of repeated runs
+
+STRONG SCALING, n=4M (baseline = MPI p=1; sequential binary = 10.328 s)
+ p  t_compute  speedup  efficiency
+ 1      8.345    1.000       1.000
+ 2      4.518    1.847       0.923
+ 3      4.236    1.970       0.657
+ 4      4.015    2.079       0.520
+ 6      2.374    3.515       0.586
+ 8      1.814    4.601       0.575
+12      1.565    5.331       0.444
+
+RUN-TO-RUN SPREAD, strong scaling (min / median / max compute seconds)
+    method  p    min  median    max
+kmeans_mpi  1  8.345   8.727  8.912
+kmeans_mpi  2  4.518   4.964  5.047
+kmeans_mpi  3  4.236   5.731 13.649
+kmeans_mpi  4  4.015   4.459  4.690
+kmeans_mpi  6  2.374   2.665  3.257
+kmeans_mpi  8  1.814   2.000  2.250
+kmeans_mpi 12  1.565   1.771  2.088
+kmeans_seq  1 10.328  10.438 12.775
+
+DATA VOLUME
+    method  p       n  t_compute
+kmeans_mpi  1 1000000      1.764
+kmeans_mpi  1 2000000      3.204
+kmeans_mpi  1 4000000      6.283
+kmeans_mpi  1 8000000     12.352
+kmeans_mpi  4 1000000      0.779
+kmeans_mpi  4 2000000      1.359
+kmeans_mpi  4 4000000      2.464
+kmeans_mpi  4 8000000      4.812
+kmeans_mpi  8 1000000      0.495
+kmeans_mpi  8 2000000      0.776
+kmeans_mpi  8 4000000      1.487
+kmeans_mpi  8 8000000      3.953
+kmeans_seq  1 1000000      2.130
+kmeans_seq  1 2000000      4.027
+kmeans_seq  1 4000000      7.831
+kmeans_seq  1 8000000     16.093
+
+HYBRID, n=4M
+ cfg  t_compute
+12x1      1.926
+ 6x2      1.329
+ 4x3      1.317
+ 3x4      1.483
+ 2x6      1.444
+1x12      1.386
