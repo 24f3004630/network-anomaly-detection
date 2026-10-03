@@ -1,0 +1,6 @@
+data/*.bin
+data/*.labels
+data/*.csv
+bin/
+*.o
+__pycache__/
