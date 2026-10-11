@@ -1,8 +1,7 @@
 # Anomaly Detection in Network Traffic using Hybrid MPI + OpenMP
 
 **Course project, Parallel Programming (Q33): Anomaly Detection in Network Traffic**
-**Team:** `[Name 1, Roll No.]`, `[Name 2, Roll No.]`, `[Name 3, Roll No.]`
-**Date:** `[date]`
+
 
 ---
 
@@ -428,6 +427,35 @@ Communication volume is small, so it is unlikely to be the main cost, but this w
 ---
 
 ## 13. Build, run and reproduce
+cd /workspaces/network-anomaly-detection
+set -o pipefail
+mkdir -p results/logs
+
+echo "========== MPI K-MEANS =========="
+OMP_NUM_THREADS=1 mpirun --oversubscribe -np 4 --use-hwthread-cpus \
+  ./bin/kmeans_mpi data/flows_1000000.bin 1000000 16 data/flows_1000000.labels 8 \
+  2>&1 | tee results/logs/kmeans_mpi.log
+status=${PIPESTATUS[0]}
+if [ "$status" -ne 0 ]; then
+  echo "MPI K-means failed with exit code $status"
+  exit "$status"
+fi
+
+echo "========== HYBRID MPI + OPENMP =========="
+OMP_NUM_THREADS=3 mpirun --oversubscribe -np 2 --use-hwthread-cpus --bind-to none \
+  ./bin/kmeans_mpi data/flows_1000000.bin 1000000 16 data/flows_1000000.labels 8 \
+  2>&1 | tee results/logs/kmeans_hybrid.log
+status=${PIPESTATUS[0]}
+if [ "$status" -ne 0 ]; then
+  echo "Hybrid experiment failed with exit code $status"
+  exit "$status"
+fi
+
+echo "========== EXPERIMENT LOGS =========="
+ls -lh results/logs/
+echo "========== PARALLEL EXPERIMENTS COMPLETED =========="
+
+
 
 ### Requirements (Ubuntu / WSL2)
 
